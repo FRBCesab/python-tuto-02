@@ -71,8 +71,8 @@ randlist
 2. The list in column format:
 
 ```{python}
-
-
+#| echo: true
+#| eval: true
 # the list displaying matching keys and values
 length = len(randlist)
 for i in range(length):

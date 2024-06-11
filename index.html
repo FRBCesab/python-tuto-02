@@ -8,7 +8,7 @@
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.555">
+  <meta name="generator" content="quarto-1.4.551">
 
   <title>A soft intro to Python (part II)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -420,7 +420,7 @@
 <ol type="1">
 <li>The list:</li>
 </ol>
-<div id="a2a92ccd" class="cell" data-execution_count="1">
+<div id="ca5c5154" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="co"># I didn't specify anything, so this is valid:</span></span>
 <span id="cb1-2"><a href=""></a>mylist <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">11</span>, <span class="dv">20</span>))</span>
 <span id="cb1-3"><a href=""></a></span>
@@ -430,7 +430,7 @@
 <pre><code>[11, 12, 13, 14, 15, 16, 17, 18, 19]</code></pre>
 </div>
 </div>
-<div id="b70b2801" class="cell" data-execution_count="2">
+<div id="015a140b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="co"># But you *could* use the random library:</span></span>
 <span id="cb3-2"><a href=""></a><span class="im">import</span> random</span>
 <span id="cb3-3"><a href=""></a>randlist <span class="op">=</span> random.sample(<span class="bu">range</span>(<span class="dv">11</span>, <span class="dv">50</span>), <span class="dv">9</span>)</span>
@@ -438,7 +438,7 @@
 <span id="cb3-5"><a href=""></a><span class="co"># show list</span></span>
 <span id="cb3-6"><a href=""></a>randlist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>[48, 44, 28, 45, 32, 41, 34, 24, 33]</code></pre>
+<pre><code>[23, 21, 26, 44, 11, 39, 36, 42, 16]</code></pre>
 </div>
 </div>
 </section>
@@ -447,26 +447,30 @@
 <ol start="2" type="1">
 <li>The list in column format:</li>
 </ol>
-<div id="99bd4b53" class="cell" data-execution_count="3">
+<div id="9fddf67b" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="co"># the list displaying matching keys and values</span></span>
+<span id="cb5-2"><a href=""></a>length <span class="op">=</span> <span class="bu">len</span>(randlist)</span>
+<span id="cb5-3"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(length):</span>
+<span id="cb5-4"><a href=""></a>  <span class="bu">print</span>(i, <span class="st">":"</span>, randlist[i])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0 : 48
-1 : 44
-2 : 28
-3 : 45
-4 : 32
-5 : 41
-6 : 34
-7 : 24
-8 : 33</code></pre>
+<pre><code>0 : 23
+1 : 21
+2 : 26
+3 : 44
+4 : 11
+5 : 39
+6 : 36
+7 : 42
+8 : 16</code></pre>
 </div>
 </div>
 <ol start="3" type="1">
 <li>The sum of all elements of the list, and the minimum and maximum values of the list</li>
 </ol>
-<div id="baab74b6" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="bu">print</span>(<span class="st">"sum randlist = "</span>, <span class="bu">sum</span>(randlist), <span class="st">"; max randlist = "</span>, <span class="bu">max</span>(randlist), <span class="st">"; min randlist = "</span>, <span class="bu">min</span>(randlist))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="95d87dc9" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="bu">print</span>(<span class="st">"sum randlist = "</span>, <span class="bu">sum</span>(randlist), <span class="st">"; max randlist = "</span>, <span class="bu">max</span>(randlist), <span class="st">"; min randlist = "</span>, <span class="bu">min</span>(randlist))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>sum randlist =  329 ; max randlist =  48 ; min randlist =  24</code></pre>
+<pre><code>sum randlist =  258 ; max randlist =  44 ; min randlist =  11</code></pre>
 </div>
 </div>
 </section>
@@ -475,14 +479,14 @@
 <ol start="4" type="1">
 <li>Create a new list made of 5 multiples of the original list</li>
 </ol>
-<div id="82c3dd3f" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>listx5 <span class="op">=</span> []</span>
-<span id="cb8-2"><a href=""></a></span>
-<span id="cb8-3"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> randlist:</span>
-<span id="cb8-4"><a href=""></a>  listx5.append(i<span class="op">*</span><span class="dv">5</span>)</span>
-<span id="cb8-5"><a href=""></a><span class="bu">print</span>(<span class="st">"multiples list : "</span>, listx5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e83b429c" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>listx5 <span class="op">=</span> []</span>
+<span id="cb9-2"><a href=""></a></span>
+<span id="cb9-3"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> randlist:</span>
+<span id="cb9-4"><a href=""></a>  listx5.append(i<span class="op">*</span><span class="dv">5</span>)</span>
+<span id="cb9-5"><a href=""></a><span class="bu">print</span>(<span class="st">"multiples list : "</span>, listx5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>multiples list :  [240, 220, 140, 225, 160, 205, 170, 120, 165]</code></pre>
+<pre><code>multiples list :  [115, 105, 130, 220, 55, 195, 180, 210, 80]</code></pre>
 </div>
 </div>
 </section>
@@ -491,17 +495,17 @@
 <ol start="5" type="1">
 <li>Count odd and even numbers</li>
 </ol>
-<div id="ff735031" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a>neven <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb10-2"><a href=""></a>nodd <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb10-3"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> randlist:</span>
-<span id="cb10-4"><a href=""></a>  <span class="cf">if</span> i<span class="op">%</span><span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb10-5"><a href=""></a>    neven <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb10-6"><a href=""></a>  <span class="cf">else</span>:</span>
-<span id="cb10-7"><a href=""></a>    nodd <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb10-8"><a href=""></a><span class="bu">print</span>(<span class="st">"randlist has"</span>, neven, <span class="st">"even numbers and"</span>, nodd, <span class="st">"odd numbers."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8d4d332d" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>neven <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb11-2"><a href=""></a>nodd <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb11-3"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> randlist:</span>
+<span id="cb11-4"><a href=""></a>  <span class="cf">if</span> i<span class="op">%</span><span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb11-5"><a href=""></a>    neven <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb11-6"><a href=""></a>  <span class="cf">else</span>:</span>
+<span id="cb11-7"><a href=""></a>    nodd <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb11-8"><a href=""></a><span class="bu">print</span>(<span class="st">"randlist has"</span>, neven, <span class="st">"even numbers and"</span>, nodd, <span class="st">"odd numbers."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>randlist has 6 even numbers and 3 odd numbers.</code></pre>
+<pre><code>randlist has 5 even numbers and 4 odd numbers.</code></pre>
 </div>
 </div>
 <p>.</p>
@@ -516,52 +520,52 @@
 <h2>Let’s write some functions…</h2>
 <p>Syntax: use <code>def</code> and, if you want, <code>return</code> keywords.</p>
 <p>Also, note <strong>INDENT</strong>, and the <code>:</code></p>
-<div id="afc81555" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="kw">def</span> question():</span>
-<span id="cb12-2"><a href=""></a>  a <span class="op">=</span> <span class="bu">input</span>(<span class="st">"How many coffees did you drink today?"</span>)</span>
-<span id="cb12-3"><a href=""></a>  <span class="cf">return</span> a</span>
-<span id="cb12-4"><a href=""></a></span>
-<span id="cb12-5"><a href=""></a>question()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e1311603" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="kw">def</span> question():</span>
+<span id="cb13-2"><a href=""></a>  a <span class="op">=</span> <span class="bu">input</span>(<span class="st">"How many coffees did you drink today?"</span>)</span>
+<span id="cb13-3"><a href=""></a>  <span class="cf">return</span> a</span>
+<span id="cb13-4"><a href=""></a></span>
+<span id="cb13-5"><a href=""></a>question()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Arguments: if you specify any, then you must use them in the function call:</p>
-<div id="0abc264a" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="kw">def</span> add_two(a) :</span>
-<span id="cb13-2"><a href=""></a>  <span class="cf">return</span> a <span class="op">+</span> <span class="dv">2</span></span>
-<span id="cb13-3"><a href=""></a></span>
-<span id="cb13-4"><a href=""></a>add_two(<span class="dv">50</span>) </span>
-<span id="cb13-5"><a href=""></a><span class="co"># 52</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="58e4d470" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="kw">def</span> add_two(a) :</span>
+<span id="cb14-2"><a href=""></a>  <span class="cf">return</span> a <span class="op">+</span> <span class="dv">2</span></span>
+<span id="cb14-3"><a href=""></a></span>
+<span id="cb14-4"><a href=""></a>add_two(<span class="dv">50</span>) </span>
+<span id="cb14-5"><a href=""></a><span class="co"># 52</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Otherwise you’ll get an error:</p>
-<div id="e0552b50" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>add_two() </span>
-<span id="cb14-2"><a href=""></a><span class="co"># ERROR: "add_two() missing 1 required positional argument: 'a' "</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="09cd2d50" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>add_two() </span>
+<span id="cb15-2"><a href=""></a><span class="co"># ERROR: "add_two() missing 1 required positional argument: 'a' "</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="lets-write-some-functions-2" class="slide level2">
 <h2>Let’s write some functions…</h2>
 <p>Same thing for multiple arguments: you need to specify them all when you use your function.</p>
-<div id="2c354fda" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="kw">def</span> add_percent(a, b):</span>
-<span id="cb15-2"><a href=""></a>  <span class="cf">return</span> a <span class="op">+</span> (a<span class="op">/</span><span class="dv">100</span><span class="op">*</span>b)</span>
-<span id="cb15-3"><a href=""></a></span>
-<span id="cb15-4"><a href=""></a>add_percent(<span class="dv">50</span>) <span class="co"># ERROR</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Luckily, you can set default argument values. In that case, you don’t have to use all args in your function call:</p>
-<div id="9d3b2bbc" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="kw">def</span> add_percent(a, b<span class="op">=</span><span class="dv">30</span>):</span>
+<div id="40e0ccfa" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="kw">def</span> add_percent(a, b):</span>
 <span id="cb16-2"><a href=""></a>  <span class="cf">return</span> a <span class="op">+</span> (a<span class="op">/</span><span class="dv">100</span><span class="op">*</span>b)</span>
 <span id="cb16-3"><a href=""></a></span>
-<span id="cb16-4"><a href=""></a>add_percent(<span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-4"><a href=""></a>add_percent(<span class="dv">50</span>) <span class="co"># ERROR</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Luckily, you can set default argument values. In that case, you don’t have to use all args in your function call:</p>
+<div id="e6102595" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="kw">def</span> add_percent(a, b<span class="op">=</span><span class="dv">30</span>):</span>
+<span id="cb17-2"><a href=""></a>  <span class="cf">return</span> a <span class="op">+</span> (a<span class="op">/</span><span class="dv">100</span><span class="op">*</span>b)</span>
+<span id="cb17-3"><a href=""></a></span>
+<span id="cb17-4"><a href=""></a>add_percent(<span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>65.0</code></pre>
 </div>
 </div>
 <p>Overwrite default arg:</p>
-<div id="e9d435bd" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href=""></a><span class="kw">def</span> add_percent(a, b<span class="op">=</span><span class="dv">30</span>):</span>
-<span id="cb18-2"><a href=""></a>  <span class="cf">return</span> a <span class="op">+</span> (a<span class="op">/</span><span class="dv">100</span><span class="op">*</span>b)</span>
-<span id="cb18-3"><a href=""></a></span>
-<span id="cb18-4"><a href=""></a>add_percent(<span class="dv">50</span>, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e3f150b8" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a><span class="kw">def</span> add_percent(a, b<span class="op">=</span><span class="dv">30</span>):</span>
+<span id="cb19-2"><a href=""></a>  <span class="cf">return</span> a <span class="op">+</span> (a<span class="op">/</span><span class="dv">100</span><span class="op">*</span>b)</span>
+<span id="cb19-3"><a href=""></a></span>
+<span id="cb19-4"><a href=""></a>add_percent(<span class="dv">50</span>, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>55.0</code></pre>
 </div>
@@ -574,61 +578,61 @@
 <p>Generate a list of integers, count occurrences of pair and odd numbers and then sum them.</p>
 </blockquote>
 <p>This was the general solution:</p>
-<div id="44848e7e" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="im">import</span> random</span>
-<span id="cb20-2"><a href=""></a>randlist <span class="op">=</span> random.sample(<span class="bu">range</span>(<span class="dv">11</span>, <span class="dv">50</span>), <span class="dv">9</span>)</span>
-<span id="cb20-3"><a href=""></a></span>
-<span id="cb20-4"><a href=""></a><span class="co"># show list</span></span>
-<span id="cb20-5"><a href=""></a>randlist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8e168d3f" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href=""></a><span class="im">import</span> random</span>
+<span id="cb21-2"><a href=""></a>randlist <span class="op">=</span> random.sample(<span class="bu">range</span>(<span class="dv">11</span>, <span class="dv">50</span>), <span class="dv">9</span>)</span>
+<span id="cb21-3"><a href=""></a></span>
+<span id="cb21-4"><a href=""></a><span class="co"># show list</span></span>
+<span id="cb21-5"><a href=""></a>randlist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>[38, 43, 34, 37, 27, 14, 29, 31, 39]</code></pre>
+<pre><code>[34, 14, 12, 36, 49, 41, 48, 29, 13]</code></pre>
 </div>
 </div>
-<div id="154858c9" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>neven <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb22-2"><a href=""></a>nodd <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb22-3"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> randlist:</span>
-<span id="cb22-4"><a href=""></a>  <span class="cf">if</span> i<span class="op">%</span><span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb22-5"><a href=""></a>    neven <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb22-6"><a href=""></a>  <span class="cf">else</span>:</span>
-<span id="cb22-7"><a href=""></a>    nodd <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb22-8"><a href=""></a><span class="bu">print</span>(<span class="st">"randlist has"</span>, neven, <span class="st">"even numbers and"</span>, nodd, <span class="st">"odd numbers."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="7ed4d487" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href=""></a>neven <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb23-2"><a href=""></a>nodd <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb23-3"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> randlist:</span>
+<span id="cb23-4"><a href=""></a>  <span class="cf">if</span> i<span class="op">%</span><span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb23-5"><a href=""></a>    neven <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb23-6"><a href=""></a>  <span class="cf">else</span>:</span>
+<span id="cb23-7"><a href=""></a>    nodd <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb23-8"><a href=""></a><span class="bu">print</span>(<span class="st">"randlist has"</span>, neven, <span class="st">"even numbers and"</span>, nodd, <span class="st">"odd numbers."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>randlist has 3 even numbers and 6 odd numbers.</code></pre>
+<pre><code>randlist has 5 even numbers and 4 odd numbers.</code></pre>
 </div>
 </div>
 </section>
 <section id="practice-1" class="slide level2">
 <h2>Practice!</h2>
 <p>Now here is a function version of the previous:</p>
-<div id="c566cc9a" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="co"># create list</span></span>
-<span id="cb24-2"><a href=""></a></span>
-<span id="cb24-3"><a href=""></a><span class="kw">def</span> create_list(n_min, n_max, n_length):</span>
-<span id="cb24-4"><a href=""></a>  <span class="im">import</span> random</span>
-<span id="cb24-5"><a href=""></a>  randlist <span class="op">=</span> random.sample(<span class="bu">range</span>(n_min, n_max), n_length)</span>
-<span id="cb24-6"><a href=""></a>  <span class="cf">return</span>(randlist)</span>
-<span id="cb24-7"><a href=""></a>  </span>
-<span id="cb24-8"><a href=""></a>l <span class="op">=</span> create_list(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">5</span>)</span>
-<span id="cb24-9"><a href=""></a><span class="bu">print</span>(l)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="7381975b" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href=""></a><span class="co"># create list</span></span>
+<span id="cb25-2"><a href=""></a></span>
+<span id="cb25-3"><a href=""></a><span class="kw">def</span> create_list(n_min, n_max, n_length):</span>
+<span id="cb25-4"><a href=""></a>  <span class="im">import</span> random</span>
+<span id="cb25-5"><a href=""></a>  randlist <span class="op">=</span> random.sample(<span class="bu">range</span>(n_min, n_max), n_length)</span>
+<span id="cb25-6"><a href=""></a>  <span class="cf">return</span>(randlist)</span>
+<span id="cb25-7"><a href=""></a>  </span>
+<span id="cb25-8"><a href=""></a>l <span class="op">=</span> create_list(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">5</span>)</span>
+<span id="cb25-9"><a href=""></a><span class="bu">print</span>(l)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[70, 19, 4, 91, 63]</code></pre>
+<pre><code>[81, 26, 73, 98, 89]</code></pre>
 </div>
 </div>
-<div id="a03c6556" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href=""></a><span class="co"># count even and odd numbers:</span></span>
-<span id="cb26-2"><a href=""></a></span>
-<span id="cb26-3"><a href=""></a><span class="kw">def</span> count_even(mylist):</span>
-<span id="cb26-4"><a href=""></a>  neven <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb26-5"><a href=""></a>  nodd <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb26-6"><a href=""></a>  <span class="cf">for</span> i <span class="kw">in</span> mylist:</span>
-<span id="cb26-7"><a href=""></a>    <span class="cf">if</span> i<span class="op">%</span><span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb26-8"><a href=""></a>      neven <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb26-9"><a href=""></a>    <span class="cf">else</span>:</span>
-<span id="cb26-10"><a href=""></a>      nodd <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb26-11"><a href=""></a>  <span class="cf">return</span>(<span class="bu">print</span>(<span class="st">"my list has"</span>, neven, <span class="st">"even numbers and"</span>, nodd, <span class="st">"odd numbers."</span>))</span>
-<span id="cb26-12"><a href=""></a></span>
-<span id="cb26-13"><a href=""></a>count_even(l)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="88e61445" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href=""></a><span class="co"># count even and odd numbers:</span></span>
+<span id="cb27-2"><a href=""></a></span>
+<span id="cb27-3"><a href=""></a><span class="kw">def</span> count_even(mylist):</span>
+<span id="cb27-4"><a href=""></a>  neven <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb27-5"><a href=""></a>  nodd <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb27-6"><a href=""></a>  <span class="cf">for</span> i <span class="kw">in</span> mylist:</span>
+<span id="cb27-7"><a href=""></a>    <span class="cf">if</span> i<span class="op">%</span><span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb27-8"><a href=""></a>      neven <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb27-9"><a href=""></a>    <span class="cf">else</span>:</span>
+<span id="cb27-10"><a href=""></a>      nodd <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb27-11"><a href=""></a>  <span class="cf">return</span>(<span class="bu">print</span>(<span class="st">"my list has"</span>, neven, <span class="st">"even numbers and"</span>, nodd, <span class="st">"odd numbers."</span>))</span>
+<span id="cb27-12"><a href=""></a></span>
+<span id="cb27-13"><a href=""></a>count_even(l)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>my list has 2 even numbers and 3 odd numbers.</code></pre>
 </div>
