@@ -286,11 +286,10 @@ count_even(l)
 
 ```
 
+## Next time:
 
-## Importing data
+Importing data
 
-
-## Pandas, matplotlib
 
 
 
