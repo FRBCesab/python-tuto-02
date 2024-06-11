@@ -1,0 +1,297 @@
+---
+title: "A soft intro to Python (part II)"
+format: 
+  revealjs:
+    theme: dark
+    smaller: true
+jupyter: python3
+---
+
+
+
+## Homework :)
+
+Generate a list of integers, and then show:
+
+- the list
+
+- the list in column format, displaying matching keys and values
+
+- the sum of all elements of the list
+
+- create a new list made of 5 multiples of the original list
+
+- give min and max values of the list
+
+- count occurrences of even and odd numbers and sum them
+
+You can find all answers on this shared [Colab](https://colab.research.google.com/drive/1RDBkYlQ8f4Fbab8ztlRFgCwVPypAV4B0). 
+
+Try it out !
+
+## Colab.
+
+If you haven't already, please create a Colab on your google account.
+
+You'll be able to copy paste the code from the slides and run them in your own Colab environment. 
+And of course run your own code !
+
+
+
+## Generate a list of integers, and show:
+
+1. The list:
+
+```{python}
+#| echo: true
+#| eval: true
+# I didn't specify anything, so this is valid:
+mylist = list(range(11, 20))
+
+# show list
+mylist
+
+
+```
+
+```{python}
+#| echo: true
+#| eval: true
+# But you *could* use the random library:
+import random
+randlist = random.sample(range(11, 50), 9)
+
+# show list
+randlist
+
+```
+
+## Generate a list of integers, and show:
+
+2. The list in column format:
+
+```{python}
+
+
+# the list displaying matching keys and values
+length = len(randlist)
+for i in range(length):
+  print(i, ":", randlist[i])
+
+```
+
+3. The sum of all elements of the list, and the minimum and maximum values of the list
+
+```{python}
+#| echo: true
+#| eval: true
+print("sum randlist = ", sum(randlist), "; max randlist = ", max(randlist), "; min randlist = ", min(randlist))
+```
+
+
+
+## Generate a list of integers, and show:
+
+4. Create a new list made of 5 multiples of the original list
+
+```{python}
+#| echo: true
+#| eval: true
+
+listx5 = []
+
+for i in randlist:
+  listx5.append(i*5)
+print("multiples list : ", listx5)
+```
+
+
+## Generate a list of integers, and show:
+
+5. Count odd and even numbers
+
+```{python}
+#| echo: true
+#| eval: true
+
+neven = 0
+nodd = 0
+for i in randlist:
+  if i%2 == 0:
+    neven += 1
+  else:
+    nodd += 1
+print("randlist has", neven, "even numbers and", nodd, "odd numbers.")
+```
+.
+
+.
+
+.
+
+### Tudo bem ??
+
+## Let's write some functions...
+
+
+## Let's write some functions...
+
+
+Syntax: use `def` and, if you want, `return` keywords.
+
+Also, note INDENT, and the `:`
+
+
+```{python}
+#| eval: false
+#| echo: true
+
+def question():
+  a = input("How many coffees did you drink today?")
+  return a
+
+question()
+
+```
+
+
+Arguments: if you specify any, then you must use them in the function call:
+
+
+```{python}
+#| eval: false
+#| echo: true
+def add_two(a) :
+  return a + 2
+
+add_two(50) 
+# 52
+```
+
+
+Otherwise you'll get an error:
+
+```{python}
+#| eval: false
+#| echo: true
+add_two() 
+# ERROR: "add_two() missing 1 required positional argument: 'a' "
+```
+
+
+## Let's write some functions...
+
+Same thing for multiple arguments: you need to specify them all when you use your function.
+```{python}
+#| eval: false
+#| echo: true
+def add_percent(a, b):
+  return a + (a/100*b)
+
+add_percent(50) # ERROR
+```
+
+
+Luckily, you can set default argument values. In that case, you don't have to use all args in your function call:
+
+```{python}
+#| eval: true
+#| echo: true
+def add_percent(a, b=30):
+  return a + (a/100*b)
+
+add_percent(50)
+```
+
+Overwrite default arg:
+
+```{python}
+#| eval: true
+#| echo: true
+def add_percent(a, b=30):
+  return a + (a/100*b)
+
+add_percent(50, 10)
+```
+
+
+## Practice!
+
+Rewrite the last Homework exercise as a function:
+
+> Generate a list of integers, count occurrences of pair and odd numbers and then sum them.
+
+This was the general solution: 
+
+```{python}
+#| echo: true
+#| eval: true
+import random
+randlist = random.sample(range(11, 50), 9)
+
+# show list
+randlist
+
+```
+
+```{python}
+#| echo: true
+#| eval: true
+
+neven = 0
+nodd = 0
+for i in randlist:
+  if i%2 == 0:
+    neven += 1
+  else:
+    nodd += 1
+print("randlist has", neven, "even numbers and", nodd, "odd numbers.")
+```
+
+## Practice !
+
+Now here is a function version of the previous:
+
+```{python}
+#| echo: true
+#| eval: true
+
+# create list
+
+def create_list(n_min, n_max, n_length):
+  import random
+  randlist = random.sample(range(n_min, n_max), n_length)
+  return(randlist)
+  
+l = create_list(0, 100, 5)
+print(l)
+```
+
+```{python}
+#| echo: true
+#| eval: true
+# count even and odd numbers:
+
+def count_even(mylist):
+  neven = 0
+  nodd = 0
+  for i in mylist:
+    if i%2 == 0:
+      neven += 1
+    else:
+      nodd += 1
+  return(print("my list has", neven, "even numbers and", nodd, "odd numbers."))
+
+count_even(l)
+
+```
+
+
+## Importing data
+
+
+## Pandas, matplotlib
+
+
+
+
