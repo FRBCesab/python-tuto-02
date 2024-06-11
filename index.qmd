@@ -38,7 +38,7 @@ And of course run your own code !
 
 
 
-## Generate a list of integers, and show:
+## Generate a list of integers
 
 1. The list:
 
@@ -66,7 +66,7 @@ randlist
 
 ```
 
-## Generate a list of integers, and show:
+## Generate a list of integers
 
 2. The list in column format:
 
@@ -90,7 +90,7 @@ print("sum randlist = ", sum(randlist), "; max randlist = ", max(randlist), "; m
 
 
 
-## Generate a list of integers, and show:
+## Generate a list of integers
 
 4. Create a new list made of 5 multiples of the original list
 
@@ -106,7 +106,7 @@ print("multiples list : ", listx5)
 ```
 
 
-## Generate a list of integers, and show:
+## Generate a list of integers
 
 5. Count odd and even numbers
 
@@ -139,7 +139,7 @@ print("randlist has", neven, "even numbers and", nodd, "odd numbers.")
 
 Syntax: use `def` and, if you want, `return` keywords.
 
-Also, note INDENT, and the `:`
+Also, note **INDENT**, and the `:`
 
 
 ```{python}
@@ -248,7 +248,7 @@ for i in randlist:
 print("randlist has", neven, "even numbers and", nodd, "odd numbers.")
 ```
 
-## Practice !
+## Practice!
 
 Now here is a function version of the previous:
 
@@ -289,8 +289,3 @@ count_even(l)
 ## Next time:
 
 Importing data
-
-
-
-
-
